@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Farmer" table="farmer" catalog="cassava" optimistic-lock="none">
+      <id name="farmerId" type="int">
+         <column name="farmerID" />
+         <generator class="foreign">
+            <param name="property">user</param>
+         </generator>
+      </id>
+      <many-to-one name="subdistrict" class="org.cassava.model.Subdistrict" fetch="select">
+         <column name="subdistrictID" />
+      </many-to-one>
+      <one-to-one name="user" class="org.cassava.model.User" constrained="true" />
+      <property name="idcard" type="string">
+         <column name="IDcard" length="13" not-null="true" unique="true" />
+      </property>
+      <property name="adderss" type="string">
+         <column name="adderss" length="50" not-null="true" />
+      </property>
+      <property name="pdpastatus" type="string">
+         <column name="PDPAStatus" length="4" not-null="true" />
+      </property>
+      <property name="pdpavalidDate" type="date">
+         <column name="PDPAValidDate" length="10" />
+      </property>
+      <property name="pdpafilePath" type="string">
+         <column name="PDPAFilePath" length="150" />
+      </property>
+      <set name="organizations" table="farmerorganization" inverse="false" lazy="true" fetch="select">
+         <key>
+            <column name="farmerID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Organization">
+            <column name="organizationID" not-null="true" />
+         </many-to-many>
+      </set>
+   </class>
+</hibernate-mapping>

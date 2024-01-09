@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Imgdisease" table="imgdisease" catalog="cassava" optimistic-lock="none">
+      <id name="imgDiseaseId" type="java.lang.Integer">
+         <column name="imgDiseaseID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="disease" class="org.cassava.model.Disease" fetch="select">
+         <column name="diseaseID" not-null="true" />
+      </many-to-one>
+      <property name="filePath" type="string">
+         <column name="filePath" length="150" not-null="true" />
+      </property>
+   </class>
+</hibernate-mapping>

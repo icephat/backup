@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Userinfield" table="userinfield" catalog="cassava" optimistic-lock="none">
+      <composite-id name="id" class="org.cassava.model.UserinfieldId">
+         <key-property name="userId" type="int">
+            <column name="userID" />
+         </key-property>
+         <key-property name="fieldId" type="int">
+            <column name="fieldID" />
+         </key-property>
+         <key-property name="role" type="string">
+            <column name="role" length="13" />
+         </key-property>
+      </composite-id>
+      <many-to-one name="field" class="org.cassava.model.Field" update="false" insert="false" fetch="select">
+         <column name="fieldID" not-null="true" />
+      </many-to-one>
+      <many-to-one name="user" class="org.cassava.model.User" update="false" insert="false" fetch="select">
+         <column name="userID" not-null="true" />
+      </many-to-one>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Imgsurveytargetpoint" table="imgsurveytargetpoint" catalog="cassava" optimistic-lock="none">
+      <id name="imgSurveyTargetPointId" type="java.lang.Integer">
+         <column name="imgSurveyTargetPointID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="surveytargetpoint" class="org.cassava.model.Surveytargetpoint" fetch="select">
+         <column name="surveyTargetPointID" not-null="true" />
+      </many-to-one>
+      <many-to-one name="userByApproveBy" class="org.cassava.model.User" fetch="select">
+         <column name="approveBy" />
+      </many-to-one>
+      <many-to-one name="userByUploadBy" class="org.cassava.model.User" fetch="select">
+         <column name="uploadBy" />
+      </many-to-one>
+      <property name="filePath" type="string">
+         <column name="filePath" length="150" not-null="true" />
+      </property>
+      <property name="filePathS" type="string">
+         <column name="filePathS" length="150" not-null="true" />
+      </property>
+      <property name="uploadDate" type="timestamp">
+         <column name="uploadDate" length="19" not-null="true" />
+      </property>
+      <property name="approveStatus" type="string">
+         <column name="approveStatus" length="8" not-null="true" />
+      </property>
+      <property name="approveDate" type="timestamp">
+         <column name="approveDate" length="19" />
+      </property>
+   </class>
+</hibernate-mapping>

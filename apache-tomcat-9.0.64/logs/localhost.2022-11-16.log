@@ -1,0 +1,114 @@
+16-Nov-2022 15:28:39.111 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:28:45.237 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:28:46.391 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:28:46.392 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:28:46.394 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7b637d7b')
+16-Nov-2022 15:28:47.966 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:28:47.967 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:29:40.275 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:29:42.696 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:29:43.489 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:29:43.489 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:29:43.490 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1a355b09')
+16-Nov-2022 15:29:45.101 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:29:45.101 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:30:29.500 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:30:32.275 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:30:33.200 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:30:33.200 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:30:33.202 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@52cb9d10')
+16-Nov-2022 15:30:34.997 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:30:34.997 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:33:26.407 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:33:29.913 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:33:31.058 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:33:31.058 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:33:31.060 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5d825cc5')
+16-Nov-2022 15:33:32.963 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:33:32.963 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:35:21.191 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:35:24.767 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:35:26.174 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:35:26.174 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:35:26.177 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@10e94ff8')
+16-Nov-2022 15:35:28.391 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:35:28.391 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:37:58.340 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:38:02.487 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:38:03.754 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:38:03.754 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:38:03.757 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@45ce737e')
+16-Nov-2022 15:38:05.869 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 15:38:05.870 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 15:41:39.474 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 15:41:43.529 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 15:41:44.846 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 15:41:44.846 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 15:41:44.848 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5d19d543')
+16-Nov-2022 16:13:08.439 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 16:13:12.549 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 16:13:13.881 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 16:13:13.881 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 16:13:13.883 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@17c59ff8')
+16-Nov-2022 16:13:15.853 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 16:13:15.853 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-Nov-2022 16:16:59.508 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 16:17:06.400 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 16:17:07.954 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 16:17:07.954 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 16:17:07.957 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@3601530d')
+16-Nov-2022 20:47:51.258 INFO [main] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+16-Nov-2022 20:47:54.319 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+16-Nov-2022 20:47:55.476 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Nov-2022 20:47:55.476 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Nov-2022 20:47:55.478 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@60f4846a')
+16-Nov-2022 22:02:53.460 WARNING [main] org.apache.catalina.session.StandardSession.doWriteObject Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [E7ACAACB699F7C84FCC75D494275B464]
+	java.io.NotSerializableException: hudson.security.HudsonPrivateSecurityRealm$Details
+		at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1202)
+		at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1587)
+		at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1544)
+		at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1453)
+		at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1196)
+		at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1587)
+		at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1544)
+		at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1453)
+		at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1196)
+		at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1587)
+		at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1544)
+		at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1453)
+		at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1196)
+		at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:362)
+		at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1726)
+		at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1067)
+		at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317)
+		at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268)
+		at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5473)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1412)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1401)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:986)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1412)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1401)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:986)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:497)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:982)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.startup.Catalina.stop(Catalina.java:849)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:811)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+16-Nov-2022 22:02:53.725 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Nov-2022 22:02:53.725 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

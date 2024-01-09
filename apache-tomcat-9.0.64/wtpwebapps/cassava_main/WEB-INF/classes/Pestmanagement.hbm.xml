@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="cassava" dynamic-insert="false" dynamic-update="false" mutable="true" name="org.cassava.model.Pestmanagement" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="pestmanagement">
+        <id name="pestManagementId" type="java.lang.Integer">
+            <column name="pestManagementID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="org.cassava.model.Pest" embed-xml="true" fetch="select" insert="true" name="pest" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="pestID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="pesticideName" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="pesticideName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pesticideNameEng" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="pesticideNameEng" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="percentApi" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="percentAPI" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pesticideMechanism" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="pesticideMechanism" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="toxicityLevel" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="toxicityLevel" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="mixingRatio" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="mixingRatio" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="instruction" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="instruction" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="instructionDetail" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="instructionDetail" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="note" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

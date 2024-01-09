@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Message" table="message" catalog="cassava" optimistic-lock="none">
+      <id name="messageId" type="java.lang.Integer">
+         <column name="messageID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="user" class="org.cassava.model.User" fetch="select">
+         <column name="sender" />
+      </many-to-one>
+      <property name="sendDate" type="timestamp">
+         <column name="sendDate" length="19" not-null="true" />
+      </property>
+      <property name="title" type="string">
+         <column name="title" length="100" />
+      </property>
+      <property name="text" type="string">
+         <column name="text" length="65535" />
+      </property>
+      <property name="type" type="string">
+         <column name="type" length="8" />
+      </property>
+      <!-- <set name="messagereceivers" table="messagereceiver" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="messageID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Messagereceiver" />
+      </set>
+      -->
+      <bag name="messagereceivers" table="messagereceiver" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="messageID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Messagereceiver" />
+      </bag>
+   </class>
+</hibernate-mapping>

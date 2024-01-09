@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.User" table="user" catalog="cassava" optimistic-lock="none">
+      <id name="userId" type="java.lang.Integer">
+         <column name="userID" />
+         <generator class="identity" />
+      </id>
+      <property name="username" type="string">
+         <column name="username" length="35" unique="true" />
+      </property>
+      <property name="title" type="string">
+         <column name="title" length="10" />
+      </property>
+      <property name="firstName" type="string">
+         <column name="firstName" length="20" not-null="true" />
+      </property>
+      <property name="lastName" type="string">
+         <column name="lastName" length="30" not-null="true" />
+      </property>
+      <property name="phoneNo" type="string">
+         <column name="phoneNo" length="20" not-null="true" />
+      </property>
+      <property name="userStatus" type="string">
+         <column name="userStatus" length="8" not-null="true" />
+      </property>
+      <property name="latestLogin" type="timestamp">
+         <column name="latestLogin" length="19" />
+      </property>
+      <property name="requestInfoStatus" type="string">
+         <column name="requestInfoStatus" length="7" not-null="true" />
+      </property>
+      <set name="plantingsForCreateBy" table="planting" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="createBy" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Planting" />
+      </set>
+      <set name="surveysForLastUpdateBy" table="survey" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="lastUpdateBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Survey" />
+      </set>
+      <set name="surveysForCreateBy" table="survey" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="createBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Survey" />
+      </set>
+      <set name="messages" table="message" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="sender" />
+         </key>
+         <one-to-many class="org.cassava.model.Message" />
+      </set>
+      <set name="fieldsForLastUpdateBy" table="field" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="lastUpdateBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Field" />
+      </set>
+      <set name="fieldsForCreateBy" table="field" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="createBy" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Field" />
+      </set>
+      <set name="userinfields" table="userinfield" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="userID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Userinfield" />
+      </set>
+      <set name="imgsurveytargetpointsForApproveBy" table="imgsurveytargetpoint" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="approveBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgsurveytargetpoint" />
+      </set>
+      <set name="messagereceivers" table="messagereceiver" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="receiverID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Messagereceiver" />
+      </set>
+      <set name="imgsurveytargetpointsForUploadBy" table="imgsurveytargetpoint" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="uploadBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgsurveytargetpoint" />
+      </set>
+      <one-to-one name="farmer" class="org.cassava.model.Farmer" />
+      <set name="requestsForRequestBy" table="request" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="requestBy" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Request" />
+      </set>
+      <set name="requestsForApproveBy" table="request" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="approveBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Request" />
+      </set>
+      <set name="surveysForImgOwner" table="survey" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="imgOwner" />
+         </key>
+         <one-to-many class="org.cassava.model.Survey" />
+      </set>
+      <set name="roles" table="userrole" inverse="false" lazy="true" fetch="select">
+         <key>
+            <column name="userID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Role">
+            <column name="roleID" not-null="true" />
+         </many-to-many>
+      </set>
+      <set name="plantingsForLastUpdateBy" table="planting" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="lastUpdateBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Planting" />
+      </set>
+      <set name="registercodes" table="registercode" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="createBy" />
+         </key>
+         <one-to-many class="org.cassava.model.Registercode" />
+      </set>
+      <one-to-one name="staff" class="org.cassava.model.Staff" />
+      <set name="surveysForImgPhotographer" table="survey" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="imgPhotographer" />
+         </key>
+         <one-to-many class="org.cassava.model.Survey" />
+      </set>
+   </class>
+</hibernate-mapping>

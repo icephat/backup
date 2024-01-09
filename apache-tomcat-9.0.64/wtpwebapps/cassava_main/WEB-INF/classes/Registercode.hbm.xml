@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Registercode" table="registercode" catalog="cassava" optimistic-lock="none">
+      <id name="registerCodeId" type="java.lang.Integer">
+         <column name="registerCodeID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="organization" class="org.cassava.model.Organization" fetch="select">
+         <column name="organizationID" not-null="true" />
+      </many-to-one>
+      <many-to-one name="user" class="org.cassava.model.User" fetch="select">
+         <column name="createBy" />
+      </many-to-one>
+      <property name="code" type="string">
+         <column name="code" length="20" not-null="true" unique="true" />
+      </property>
+      <property name="userType" type="string">
+         <column name="userType" length="6" not-null="true" />
+      </property>
+      <property name="numUserPermit" type="int">
+         <column name="numUserPermit" not-null="true" />
+      </property>
+      <property name="numUseRegist" type="int">
+         <column name="numUseRegist" not-null="true" />
+      </property>
+      <property name="startDate" type="timestamp">
+         <column name="startDate" length="19" not-null="true" />
+      </property>
+      <property name="expireDate" type="timestamp">
+         <column name="expireDate" length="19" not-null="true" />
+      </property>
+      <property name="createDate" type="timestamp">
+         <column name="createDate" length="19" not-null="true" />
+      </property>
+   </class>
+</hibernate-mapping>

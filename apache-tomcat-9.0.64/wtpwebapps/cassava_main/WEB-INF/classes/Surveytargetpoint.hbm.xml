@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Surveytargetpoint" table="surveytargetpoint" catalog="cassava" optimistic-lock="none">
+      <id name="surveyTargetPointId" type="java.lang.Integer">
+         <column name="surveyTargetPointID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="surveytarget" class="org.cassava.model.Surveytarget" fetch="select">
+         <column name="surveyTargetID" not-null="true" />
+      </many-to-one>
+      <property name="pointNumber" type="int">
+         <column name="pointNumber" not-null="true" />
+      </property>
+      <property name="amount" type="java.lang.Integer">
+         <column name="amount" />
+      </property>
+      <set name="imgsurveytargetpoints" table="imgsurveytargetpoint" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="surveyTargetPointID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgsurveytargetpoint" />
+      </set>
+   </class>
+</hibernate-mapping>

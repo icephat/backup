@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Staff" table="staff" catalog="cassava" optimistic-lock="none">
+      <id name="staffId" type="int">
+         <column name="staffID" />
+         <generator class="foreign">
+            <param name="property">user</param>
+         </generator>
+      </id>
+      <many-to-one name="organization" class="org.cassava.model.Organization" fetch="select">
+         <column name="organizationID" />
+      </many-to-one>
+      <one-to-one name="user" class="org.cassava.model.User" constrained="true" />
+      <property name="position" type="string">
+         <column name="position" length="30" not-null="true" />
+      </property>
+      <property name="division" type="string">
+         <column name="division" length="50" not-null="true" />
+      </property>
+   </class>
+</hibernate-mapping>

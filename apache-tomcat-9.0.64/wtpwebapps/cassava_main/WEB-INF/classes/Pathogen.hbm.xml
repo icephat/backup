@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+   <class catalog="cassava" dynamic-insert="false" dynamic-update="false" mutable="true" name="org.cassava.model.Pathogen" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="pathogen">
+      <id name="pathogenId" type="java.lang.Integer">
+         <column name="pathogenID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one class="org.cassava.model.Pathogentype" embed-xml="true" fetch="select" insert="true" name="pathogentype" not-found="exception" optimistic-lock="true" unique="false" update="true">
+         <column name="pathogenTypeID" not-null="true" />
+      </many-to-one>
+      <property generated="never" lazy="false" name="scientificName" optimistic-lock="true" type="string" unique="false">
+         <column length="30" name="scientificName" not-null="true" />
+      </property>
+      <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="diseases" optimistic-lock="true" sort="unsorted" table="diseasepathogen">
+         <key on-delete="noaction">
+            <column name="pathogenID" not-null="true" />
+         </key>
+         <many-to-many embed-xml="true" entity-name="org.cassava.model.Disease" not-found="exception" unique="false">
+            <column name="diseaseID" not-null="true" />
+         </many-to-many>
+      </set>
+   </class>
+</hibernate-mapping>

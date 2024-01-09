@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Naturalenemy" table="naturalenemy" catalog="cassava" optimistic-lock="none">
+      <id name="naturalEnemyId" type="int">
+         <column name="naturalEnemyID" />
+         <generator class="foreign">
+            <param name="property">targetofsurvey</param>
+         </generator>
+      </id>
+      <one-to-one name="targetofsurvey" class="org.cassava.model.Targetofsurvey" constrained="true"  cascade="save-update"/>
+      <property name="commonName" type="string">
+         <column name="commonName" length="30" not-null="true" />
+      </property>
+      <property name="scientificName" type="string">
+         <column name="scientificName" length="30" not-null="true" />
+      </property>
+      <property name="type" type="string">
+         <column name="type" length="8" />
+      </property>
+      <property name="controlMethod" type="string">
+         <column name="controlMethod" />
+      </property>
+      <property name="releaseRate" type="string">
+         <column name="releaseRate" />
+      </property>
+      <property name="source" type="string">
+         <column name="source" not-null="true" />
+      </property>
+      <!--  
+      <set name="imgnaturalenemies" table="imgnaturalenemy" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="naturalEnemyID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgnaturalenemy" />
+      </set>
+      -->
+       <bag name="imgnaturalenemies" table="imgnaturalenemy" inverse="true" lazy="true" fetch="select" cascade="save-update">
+         <key>
+            <column name="naturalEnemyID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgnaturalenemy" />
+      </bag>
+   </class>
+</hibernate-mapping>

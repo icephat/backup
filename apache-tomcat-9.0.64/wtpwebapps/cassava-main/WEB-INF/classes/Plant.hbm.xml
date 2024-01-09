@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Plant" table="plant" catalog="cassava" optimistic-lock="none">
+      <id name="plantId" type="java.lang.Integer">
+         <column name="plantID" />
+         <generator class="identity" />
+      </id>
+      <property name="name" type="string">
+         <column name="name" length="30" not-null="true" />
+      </property>
+      <property name="harvestDayStart" type="int">
+         <column name="harvestDayStart" not-null="true" />
+      </property>
+      <property name="harvestDayEnd" type="int">
+         <column name="harvestDayEnd" not-null="true" />
+      </property>
+      <set name="varieties" table="variety" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="plantID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Variety" />
+      </set>
+      <set name="diseases" table="disease" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="plantID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Disease" />
+      </set>
+      <set name="plantphases" table="plantphase" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="plantID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Plantphase" />
+      </set>
+   </class>
+</hibernate-mapping>

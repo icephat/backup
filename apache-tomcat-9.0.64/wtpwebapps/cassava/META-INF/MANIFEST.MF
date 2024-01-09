@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Phattaraporn
+Build-Jdk: 17.0.4.1
+Implementation-Title: Cassava MVC
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: cassava
+Implementation-URL: https://spring.io/projects/spring-boot/cassava
+Created-By: Maven Integration for Eclipse
+

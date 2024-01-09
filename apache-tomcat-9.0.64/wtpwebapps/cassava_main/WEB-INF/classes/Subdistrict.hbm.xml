@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+   <class catalog="cassava" dynamic-insert="false" dynamic-update="false" mutable="true" name="org.cassava.model.Subdistrict" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="subdistrict">
+      <id name="subdistrictId" type="java.lang.Integer">
+         <column name="subdistrictID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one class="org.cassava.model.District" embed-xml="true" fetch="select" insert="true" name="district" not-found="exception" optimistic-lock="true" unique="false" update="true">
+         <column name="districtID" not-null="true" />
+      </many-to-one>
+      <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+         <column length="30" name="name" not-null="true" />
+      </property>
+      <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="fields" optimistic-lock="true" sort="unsorted" table="field">
+         <key on-delete="noaction">
+            <column name="subdistrictID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Field" embed-xml="true" not-found="exception" />
+      </set>
+      <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="farmers" optimistic-lock="true" sort="unsorted" table="farmer">
+         <key on-delete="noaction">
+            <column name="subdistrictID" />
+         </key>
+         <one-to-many class="org.cassava.model.Farmer" embed-xml="true" not-found="exception" />
+      </set>
+   </class>
+</hibernate-mapping>

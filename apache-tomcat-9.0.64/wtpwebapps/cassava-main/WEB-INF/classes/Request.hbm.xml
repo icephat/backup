@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Request" table="request" catalog="cassava" optimistic-lock="none">
+      <id name="requestId" type="java.lang.Integer">
+         <column name="requestID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="userByRequestBy" class="org.cassava.model.User" fetch="select">
+         <column name="requestBy" not-null="true" />
+      </many-to-one>
+      <many-to-one name="userByApproveBy" class="org.cassava.model.User" fetch="select">
+         <column name="approveBy" />
+      </many-to-one>
+      <property name="requestDate" type="timestamp">
+         <column name="requestDate" length="19" not-null="true" />
+      </property>
+      <property name="requestNote" type="string">
+         <column name="requestNote" not-null="true" />
+      </property>
+      <property name="status" type="string">
+         <column name="status" length="8" not-null="true" />
+      </property>
+      <property name="approveExpire" type="date">
+         <column name="approveExpire" length="10" />
+      </property>
+      <property name="type" type="string">
+         <column name="type" length="5" not-null="true" />
+      </property>
+      <!-- <set name="surveys" table="requestdetail" inverse="false" lazy="true" fetch="select">
+         <key>
+            <column name="requestID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Survey">
+            <column name="requestInfo" not-null="true" />
+         </many-to-many>
+      </set>
+      -->
+      <bag name="surveys" table="requestdetail" inverse="false" lazy="true" fetch="select">
+         <key>
+            <column name="requestID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Survey">
+            <column name="requestInfo" not-null="true" />
+         </many-to-many>
+      </bag>
+   </class>
+</hibernate-mapping>

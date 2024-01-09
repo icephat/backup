@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="cassava" dynamic-insert="false" dynamic-update="false" mutable="true" name="org.cassava.model.Messagereceiver" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="messagereceiver">
+        <composite-id class="org.cassava.model.MessagereceiverId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="messageId" type="int">
+                <column name="messageID"/>
+            </key-property>
+            <key-property name="receiverId" type="int">
+                <column name="receiverID"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="org.cassava.model.Message" embed-xml="true" fetch="select" insert="false" name="message" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="messageID" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="org.cassava.model.User" embed-xml="true" fetch="select" insert="false" name="user" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="receiverID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="readStatus" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="readStatus" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

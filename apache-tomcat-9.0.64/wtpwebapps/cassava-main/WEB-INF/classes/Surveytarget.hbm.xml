@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Surveytarget" table="surveytarget" catalog="cassava" optimistic-lock="none">
+      <id name="surveyTargetId" type="java.lang.Integer">
+         <column name="surveyTargetID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="survey" class="org.cassava.model.Survey" fetch="select">
+         <column name="surveyID" not-null="true" />
+      </many-to-one>
+      <many-to-one name="targetofsurvey" class="org.cassava.model.Targetofsurvey" fetch="select">
+         <column name="targetOfSurveyID" not-null="true" />
+      </many-to-one>
+      <property name="tpe" type="string">
+         <column name="tpe" length="8" not-null="true" />
+      </property>
+      <property name="levelDamage" type="java.lang.Integer">
+         <column name="levelDamage" />
+      </property>
+      <property name="percentDamage" type="java.lang.Integer">
+         <column name="percentDamage" />
+      </property>
+      <!--  
+      <set name="surveytargetpoints" table="surveytargetpoint" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="surveyTargetID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Surveytargetpoint" />
+      </set>
+      -->
+      <bag name="surveytargetpoints" table="surveytargetpoint" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="surveyTargetID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Surveytargetpoint" />
+      </bag>
+   </class>
+</hibernate-mapping>

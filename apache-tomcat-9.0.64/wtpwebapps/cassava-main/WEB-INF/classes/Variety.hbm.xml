@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Variety" table="variety" catalog="cassava" optimistic-lock="none">
+      <id name="varietyId" type="java.lang.Integer">
+         <column name="varietyID" />
+         <generator class="identity" />
+      </id>
+      <many-to-one name="plant" class="org.cassava.model.Plant" fetch="select">
+         <column name="plantID" not-null="true" />
+      </many-to-one>
+      <property name="name" type="string">
+         <column name="name" length="30" not-null="true" />
+      </property>
+      <property name="trichome" type="string">
+         <column name="trichome" length="20" />
+      </property>
+      <property name="apicalLeavesColor" type="string">
+         <column name="apicalLeavesColor" length="30">
+            <comment>สียอดอ่อน</comment>
+         </column>
+      </property>
+      <property name="youngLeavesColor" type="string">
+         <column name="youngLeavesColor" length="30">
+            <comment>สีใบอ่อน</comment>
+         </column>
+      </property>
+      <property name="petioleColor" type="string">
+         <column name="petioleColor" length="30">
+            <comment>สีก้านใบ</comment>
+         </column>
+      </property>
+      <property name="centralLeafletShape" type="string">
+         <column name="centralLeafletShape" length="30">
+            <comment>ลักษณะแฉกกลางใบ</comment>
+         </column>
+      </property>
+      <property name="branchingHabit" type="string">
+         <column name="branchingHabit" length="20">
+            <comment>การแตกกิ่ง</comment>
+         </column>
+      </property>
+      <property name="heightToFirstBranching" type="string">
+         <column name="heightToFirstBranching" length="20">
+            <comment>ความสูงของการแตกกิ่งแรก(ซม.)</comment>
+         </column>
+      </property>
+      <property name="plantHeight" type="string">
+         <column name="plantHeight" length="20">
+            <comment>ความสูงของลำต้น(ซม.)</comment>
+         </column>
+      </property>
+      <property name="stemColor" type="string">
+         <column name="stemColor" length="30">
+            <comment>สีลำต้น</comment>
+         </column>
+      </property>
+      <property name="starchContentRainySeason" type="string">
+         <column name="starchContentRainySeason" length="20">
+            <comment>เปอร์เซ็นต์แป้งฤดูฝน</comment>
+         </column>
+      </property>
+      <property name="starchContentDrySeason" type="string">
+         <column name="starchContentDrySeason" length="20">
+            <comment>เปอร์เซ็นต์แป้งฤดูแล้ง</comment>
+         </column>
+      </property>
+      <property name="rootYield" type="java.lang.Float">
+         <column name="rootYield" precision="12" scale="0">
+            <comment>ผลผลิต(กก.)</comment>
+         </column>
+      </property>
+      <property name="mainCharacter" type="string">
+         <column name="mainCharacter">
+            <comment>ลักษณะเด่น</comment>
+         </column>
+      </property>
+      <property name="limitationNote" type="string">
+         <column name="limitationNote">
+            <comment>ข้อจำกัด</comment>
+         </column>
+      </property>
+      <property name="source" type="string">
+         <column name="source">
+            <comment>แหล่งที่มา</comment>
+         </column>
+      </property>
+      <!--
+      <set name="plantingcassavavarieties" table="plantingcassavavariety" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="varietyID" not-null="true" unique="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Plantingcassavavariety" />
+      </set>
+        
+      <set name="imgvarieties" table="imgvariety" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="varietyID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgvariety" />
+      </set>
+      -->
+      <bag name="plantingcassavavarieties" table="plantingcassavavariety" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="varietyID" not-null="true" unique="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Plantingcassavavariety" />
+      </bag>
+      <bag name="imgvarieties" table="imgvariety" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="varietyID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Imgvariety" />
+      </bag>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2022, 4:09:27 PM by Hibernate Tools 5.5.3.Final -->
+<hibernate-mapping>
+   <class name="org.cassava.model.Organization" table="organization" catalog="cassava" optimistic-lock="none">
+      <id name="organizationId" type="java.lang.Integer">
+         <column name="organizationID" />
+         <generator class="identity" />
+      </id>
+      <property name="name" type="string">
+         <column name="name" length="50" not-null="true" />
+      </property>
+      <property name="phone" type="string">
+         <column name="phone" length="20" />
+      </property>
+      <property name="code" type="string">
+         <column name="code" length="10" not-null="true" unique="true" />
+      </property>
+      <property name="accessInfoLevel" type="string">
+         <column name="accessInfoLevel" length="14" not-null="true">
+            <comment>?????????????????????</comment>
+         </column>
+      </property>
+      <!-- <set name="staffs" table="staff" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" />
+         </key>
+         <one-to-many class="org.cassava.model.Staff" />
+      </set>
+      <set name="farmers" table="farmerorganization" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Farmer">
+            <column name="farmerID" not-null="true" />
+         </many-to-many>
+      </set>
+      <set name="fields" table="field" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Field" />
+      </set>
+      <set name="registercodes" table="registercode" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Registercode" />
+      </set>
+      -->
+      <bag name="staffs" table="staff" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" />
+         </key>
+         <one-to-many class="org.cassava.model.Staff" />
+      </bag>
+      <bag name="farmers" table="farmerorganization" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <many-to-many entity-name="org.cassava.model.Farmer">
+            <column name="farmerID" not-null="true" />
+         </many-to-many>
+      </bag>
+      <bag name="fields" table="field" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Field" />
+      </bag>
+      <bag name="registercodes" table="registercode" inverse="true" lazy="true" fetch="select">
+         <key>
+            <column name="organizationID" not-null="true" />
+         </key>
+         <one-to-many class="org.cassava.model.Registercode" />
+      </bag>
+   </class>
+</hibernate-mapping>
